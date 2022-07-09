@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "madeye-search": "apps/madeye-search",
+    "madeye-search-e2e": "apps/madeye-search-e2e"
+  }
+}

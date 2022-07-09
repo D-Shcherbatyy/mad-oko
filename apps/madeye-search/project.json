@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/madeye-search/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/madeye-search",
+        "index": "apps/madeye-search/src/index.html",
+        "baseHref": "/",
+        "main": "apps/madeye-search/src/main.tsx",
+        "polyfills": "apps/madeye-search/src/polyfills.ts",
+        "tsConfig": "apps/madeye-search/tsconfig.app.json",
+        "assets": [
+          "apps/madeye-search/src/favicon.ico",
+          "apps/madeye-search/src/assets"
+        ],
+        "styles": ["apps/madeye-search/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/madeye-search/src/environments/environment.ts",
+              "with": "apps/madeye-search/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "madeye-search:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "madeye-search:build:development"
+        },
+        "production": {
+          "buildTarget": "madeye-search:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/madeye-search/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/madeye-search"],
+      "options": {
+        "jestConfig": "apps/madeye-search/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
