@@ -3,6 +3,10 @@
   "version": 2,
   "projects": {
     "madeye-search": "apps/madeye-search",
-    "madeye-search-e2e": "apps/madeye-search-e2e"
+    "madeye-search-e2e": "apps/madeye-search-e2e",
+    "searching-domain": "libs/searching/domain",
+    "searching-feature-search": "libs/searching/feature-search",
+    "searching-use-case": "libs/searching/use-case",
+    "shared-ui": "libs/shared/ui"
   }
 }

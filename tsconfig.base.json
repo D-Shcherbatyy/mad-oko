@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mad-oko/searching/domain": ["libs/searching/domain/src/index.ts"],
+      "@mad-oko/searching/feature-search": [
+        "libs/searching/feature-search/src/index.ts"
+      ],
+      "@mad-oko/searching/use-case": ["libs/searching/use-case/src/index.ts"],
+      "@mad-oko/shared/ui": ["libs/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
